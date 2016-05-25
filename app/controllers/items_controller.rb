@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit,:update,:destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :destroy]
   before_action :authorize_shopkeeper, only: [:create, :edit, :destroy]
 
   # GET /items

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   return unless !current_user.shopkeeper?
   
-    redirect_to items_path, alert: 'Access Denied!'
+    redirect_to root_path, alert: 'Access Denied!'
     
   end
   

@@ -1,5 +1,8 @@
 class ShoppersController < ApplicationController
   before_action :set_shopper, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show]
+  before_action :authorize_shopkeeper, only: [:new, :create, :edit, :destroy]
+
 
   # GET /shoppers
   # GET /shoppers.json
